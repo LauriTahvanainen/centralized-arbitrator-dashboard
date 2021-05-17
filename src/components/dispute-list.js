@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { arbitrableInstanceAt } from '../ethereum/arbitrable'
+import { IPFS_GATEWAY } from '../ethereum/ipfsGateway'
 
 class DisputeList extends React.Component {
   constructor(props) {
@@ -17,9 +18,9 @@ class DisputeList extends React.Component {
       disputes: [],
       filter: 0
     }
-    this.subscriptions = []
+    this.subscriptions = [];
 
-    this.gateway = 'https://ipfs.kleros.io'
+    this.gateway = IPFS_GATEWAY;
   }
 
   setFilter = filter => async _ => {

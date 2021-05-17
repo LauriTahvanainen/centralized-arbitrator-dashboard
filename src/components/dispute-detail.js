@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import TimeAgo from "react-timeago";
 import Web3 from "../ethereum/web3";
+import { IPFS_GATEWAY } from "../ethereum/ipfsGateway";
 
 class DisputeDetail extends React.Component {
   constructor(props) {
@@ -101,7 +102,7 @@ class DisputeDetail extends React.Component {
                 <iframe
                   className="embed-responsive-item"
                   src={
-                    (evidenceDisplayInterfaceURI.includes("://") ? evidenceDisplayInterfaceURI : `https://ipfs.kleros.io${evidenceDisplayInterfaceURI}`) +
+                    (evidenceDisplayInterfaceURI.includes("://") ? evidenceDisplayInterfaceURI : IPFS_GATEWAY + `${evidenceDisplayInterfaceURI}`) +
                     encodeURI(`{"arbitrableContractAddress":"${arbitrableContractAddress}","arbitratorContractAddress":"${centralizedArbitratorInstance._address}","disputeID":"${id}"}`)
                   }
                   title="evidence-display"
